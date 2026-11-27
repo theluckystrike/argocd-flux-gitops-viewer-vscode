@@ -1,0 +1,357 @@
+{
+  "name": "zovo-argocd-flux-gitops-viewer",
+  "displayName": "ArgoCD & Flux GitOps Viewer",
+  "description": "Inspect ArgoCD Application, ApplicationSet, AppProject and Flux GitRepository, Kustomization and HelmRelease manifests offline in VS Code: sources, sync policies, destinations and security audit with zero cloud calls.",
+  "version": "0.1.0",
+  "publisher": "zovo",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#0F172A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/argocd-flux-gitops-viewer-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/theluckystrike/argocd-flux-gitops-viewer-vscode/issues"
+  },
+  "homepage": "https://github.com/theluckystrike/argocd-flux-gitops-viewer-vscode#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "argocd",
+    "flux",
+    "gitops",
+    "kubernetes",
+    "k8s",
+    "kustomization",
+    "helmrelease",
+    "devops",
+    "viewer"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onUri",
+    "onCustomEditor:zovo-gitopsview.viewer"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "zovo-gitopsview.viewer",
+        "displayName": "ArgoCD & Flux GitOps Viewer",
+        "selector": [
+          {
+            "filenamePattern": "application.yaml"
+          },
+          {
+            "filenamePattern": "application.yml"
+          },
+          {
+            "filenamePattern": "applicationset.yaml"
+          },
+          {
+            "filenamePattern": "applicationset.yml"
+          },
+          {
+            "filenamePattern": "appproject.yaml"
+          },
+          {
+            "filenamePattern": "appproject.yml"
+          },
+          {
+            "filenamePattern": "*.argocd.yaml"
+          },
+          {
+            "filenamePattern": "*.argocd.yml"
+          },
+          {
+            "filenamePattern": "gotk-sync.yaml"
+          },
+          {
+            "filenamePattern": "gotk-components.yaml"
+          },
+          {
+            "filenamePattern": "gitrepository.yaml"
+          },
+          {
+            "filenamePattern": "gitrepository.yml"
+          },
+          {
+            "filenamePattern": "helmrelease.yaml"
+          },
+          {
+            "filenamePattern": "helmrelease.yml"
+          },
+          {
+            "filenamePattern": "*.flux.yaml"
+          },
+          {
+            "filenamePattern": "*.flux.yml"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "zovoGitopsview.openWith",
+        "title": "Open in ArgoCD & Flux GitOps Viewer",
+        "category": "ArgoCD & Flux GitOps Viewer",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "zovoGitopsview.openSample",
+        "title": "Open the Sample application.yaml",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.openWalkthrough",
+        "title": "Get Started",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.moreViewers",
+        "title": "More free tools by Zovo",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.supportDeveloper",
+        "title": "Support the developer",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.auditGitopsManifest",
+        "title": "Audit ArgoCD & Flux sync & security (Pro, 1 free try)",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.diffGitopsManifests",
+        "title": "Compare two GitOps manifests (Pro, 1 free try)",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.exportGitopsInventory",
+        "title": "Export GitOps app & source inventory (Pro, 1 free try)",
+        "category": "ArgoCD & Flux GitOps Viewer"
+      },
+      {
+        "command": "zovoGitopsview.zovoPro.auditGitopsManifest",
+        "title": "Zovo Pro: Audit ArgoCD & Flux sync & security"
+      },
+      {
+        "command": "zovoGitopsview.zovoPro.diffGitopsManifests",
+        "title": "Zovo Pro: Compare two GitOps manifests"
+      },
+      {
+        "command": "zovoGitopsview.zovoPro.exportGitopsInventory",
+        "title": "Zovo Pro: Export GitOps app & source inventory"
+      },
+      {
+        "command": "zovoGitopsview.zovoTitle.auditGitopsManifest",
+        "title": "Zovo Pro: Audit ArgoCD & Flux sync & security"
+      },
+      {
+        "command": "zovoGitopsview.zovoTitle.diffGitopsManifests",
+        "title": "Zovo Pro: Compare two GitOps manifests"
+      },
+      {
+        "command": "zovoGitopsview.zovoTitle.exportGitopsInventory",
+        "title": "Zovo Pro: Export GitOps app & source inventory"
+      },
+      {
+        "command": "zovoGitopsview.getPro",
+        "title": "Get Zovo Pro (USD 19 once, all Zovo extensions)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoGitopsview.payWithPayPal",
+        "title": "Pay for Zovo Pro with PayPal (USD 19, team of 5 USD 59)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoGitopsview.unlockWithSponsors",
+        "title": "I already paid: activate with GitHub Sponsors",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoGitopsview.enterLicenseKey",
+        "title": "Enter Zovo Pro license key",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoGitopsview.removeLicense",
+        "title": "Remove Zovo Pro from this editor",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoGitopsview.payByCard",
+        "title": "Pay for Zovo Pro by card (USD 19)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoGitopsview.enterKey",
+        "title": "Enter a key",
+        "category": "Zovo Pro"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "zovoGitopsview.zovoTitle.auditGitopsManifest",
+          "when": "activeCustomEditorId == 'zovo-gitopsview.viewer' && config.zovoGitopsview.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "zovoGitopsview.zovoTitle.diffGitopsManifests",
+          "when": "activeCustomEditorId == 'zovo-gitopsview.viewer' && config.zovoGitopsview.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "zovoGitopsview.zovoTitle.exportGitopsInventory",
+          "when": "activeCustomEditorId == 'zovo-gitopsview.viewer' && config.zovoGitopsview.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "zovoGitopsview.openWith",
+          "when": "resourceFilename =~ /^(application(set)?|appproject|gotk-sync|gotk-components|gitrepository|helmrelease)\\.ya?ml$|^.+\\.(argocd|flux)\\.ya?ml$/i && !explorerResourceIsFolder",
+          "group": "navigation@9"
+        },
+        {
+          "command": "zovoGitopsview.zovoPro.auditGitopsManifest",
+          "when": "resourceFilename =~ /^(application(set)?|appproject|gotk-sync|gotk-components|gitrepository|helmrelease)\\.ya?ml$|^.+\\.(argocd|flux)\\.ya?ml$/i && !explorerResourceIsFolder && config.zovoGitopsview.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "zovoGitopsview.zovoPro.diffGitopsManifests",
+          "when": "resourceFilename =~ /^(application(set)?|appproject|gotk-sync|gotk-components|gitrepository|helmrelease)\\.ya?ml$|^.+\\.(argocd|flux)\\.ya?ml$/i && !explorerResourceIsFolder && config.zovoGitopsview.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "zovoGitopsview.zovoPro.exportGitopsInventory",
+          "when": "resourceFilename =~ /^(application(set)?|appproject|gotk-sync|gotk-components|gitrepository|helmrelease)\\.ya?ml$|^.+\\.(argocd|flux)\\.ya?ml$/i && !explorerResourceIsFolder && config.zovoGitopsview.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "zovoGitopsview.auditGitopsManifest",
+          "when": "config.zovoGitopsview.showProTools"
+        },
+        {
+          "command": "zovoGitopsview.diffGitopsManifests",
+          "when": "config.zovoGitopsview.showProTools"
+        },
+        {
+          "command": "zovoGitopsview.exportGitopsInventory",
+          "when": "config.zovoGitopsview.showProTools"
+        },
+        {
+          "command": "zovoGitopsview.zovoPro.auditGitopsManifest",
+          "when": "false"
+        },
+        {
+          "command": "zovoGitopsview.zovoPro.diffGitopsManifests",
+          "when": "false"
+        },
+        {
+          "command": "zovoGitopsview.zovoPro.exportGitopsInventory",
+          "when": "false"
+        },
+        {
+          "command": "zovoGitopsview.zovoTitle.auditGitopsManifest",
+          "when": "false"
+        },
+        {
+          "command": "zovoGitopsview.zovoTitle.diffGitopsManifests",
+          "when": "false"
+        },
+        {
+          "command": "zovoGitopsview.zovoTitle.exportGitopsInventory",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ArgoCD & Flux GitOps Viewer",
+      "properties": {
+        "zovoGitopsview.maxFileMB": {
+          "type": "number",
+          "default": 16,
+          "minimum": 1,
+          "maximum": 128,
+          "description": "ArgoCD and Flux GitOps manifest files up to this size open in ArgoCD & Flux GitOps Viewer."
+        },
+        "zovoGitopsview.pageSize": {
+          "type": "number",
+          "default": 100,
+          "minimum": 20,
+          "maximum": 500,
+          "description": "Parsed GitOps resources shown on one page."
+        },
+        "zovoGitopsview.showProTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Zovo Pro tools (GitOps audit, manifest diff and inventory export) in the Command Palette, the Explorer menu, the editor title menu and the viewer toolbar. Everything free stays visible."
+        },
+        "zovoGitopsview.askForRating": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask once for a store rating after 3 GitOps manifests open without an error across 2 days. Choosing No thanks never asks again. Nothing is sent anywhere."
+        },
+        "zovoGitopsview.showSupportLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the small Rate, More free tools and Zovo Pro links at the bottom of the viewer. Nothing is sent anywhere."
+        },
+        "zovo.gitopsview.trial.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the 7-day Zovo Pro trial button in the Pro panel."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "zovoGitopsview.start",
+        "title": "Get started with ArgoCD & Flux GitOps Viewer",
+        "description": "Inspect ArgoCD and Flux GitOps YAML manifests offline in VS Code.",
+        "steps": [
+          {
+            "id": "open",
+            "title": "Open a GitOps manifest",
+            "description": "Click any application.yaml, gotk-sync.yaml, gitrepository.yaml or helmrelease.yaml file in the Explorer, or run Open in ArgoCD & Flux GitOps Viewer.\n[Open the sample application.yaml](command:zovoGitopsview.openSample)",
+            "media": {
+              "image": "images/screenshot.png",
+              "altText": "An ArgoCD and Flux GitOps manifest open in the viewer showing applications, source repositories, sync policies, destinations and security findings."
+            },
+            "completionEvents": [
+              "onCommand:zovoGitopsview.openSample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node scripts/test.js",
+    "package": "npx -y @vscode/vsce@3 package --no-dependencies"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/theluckystrike/sponsorships?tier_id=679878"
+  }
+}
